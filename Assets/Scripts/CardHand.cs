@@ -14,18 +14,18 @@ public class CardHand : MonoBehaviour
         points = 0;
         //Definimos dónde posicionamos las cartas de cada uno
         if (!isDealer)
-            coordY = 3;
-        else
             coordY = -1;
+        else
+            coordY = 3;
     }
 
     public void Clear()
     {
         points = 0;
         if (!isDealer)
-            coordY = 3;
-        else
             coordY = -1;
+        else
+            coordY = 3;
         foreach (GameObject g in cards)
         {
             Destroy(g);
@@ -33,9 +33,9 @@ public class CardHand : MonoBehaviour
         cards.Clear();                        
     }        
 
-    public void InitialToggle()
+    public void ToggleFirst(bool toggle)
     {
-        cards[0].GetComponent<CardModel>().ToggleFace(true);              
+        cards[0].GetComponent<CardModel>().ToggleFace(toggle);              
     }
 
     public void Push(Sprite front, int value)
